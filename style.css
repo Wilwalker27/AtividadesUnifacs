@@ -1,0 +1,111 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    color: #fff;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Estilização do header */
+header {
+    background-color: #111; 
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    float: left;
+    margin-right: 20px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+/* Estilização do Hero */
+#hero {
+    background-color: #111; /* Fundo escuro */
+    text-align: center;
+    padding: 80px 0;
+}
+
+#hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #0095ff; /* Azul claro */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilização do Formulário de Contato */
+#contato {
+    padding: 40px 0;
+    background-color: #111; /* Fundo escuro */
+    text-align: center;
+}
+
+#contato form {
+    display: inline-block;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#contato input, #contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#contato button {
+    background-color: #0095ff; /* Azul claro */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Estilização do footer */
+footer {
+    background-color: #111; /* Fundo escuro */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
