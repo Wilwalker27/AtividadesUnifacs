@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rigne</title>
+    <style>
+        /* Atualizações no root e estilos base */
+        :root {
+            --primary-color: #2d1b4a;
+            --secondary-color: #241a2b;
+            --accent-color: #e040fb;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        /* Atualização dos grids e cards */
+        .tech-grid {
+            background: var(--dark-bg);
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--text-color);
+        }
+
+        .tech-card h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        /* Atualização da seção de serviços */
+        .services-section {
+            background: var(--dark-bg);
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--accent-color), 
+                transparent
+            );
+            animation: borderFlow 3s infinite linear;
+        }
+
+        .services-title {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
+
+        /* Atualização da seção de contato */
+        .contact-section {
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Novas animações */
+        @keyframes borderFlow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(33.33%); }
+        }
+
+        @keyframes gradientBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background: var(--dark-bg);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            opacity: 1;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+            transition: var(--transition);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem;
+            background: #f8f9fa;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .tech-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .visible {
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        /* Novo estilo para seção de serviços */
+        .services-section {
+            padding: 6rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .services-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Seção de contato */
+        .contact-section {
+            padding: 6rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .tech-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .visible {
+            animation: fadeInUp 0.6s forwards;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="floating-particles" id="particles"></div>
+        <div class="hero-content">
+            <h1>Rigne Agents-IA </h1>
+            <p>Transformando negócios atráves de automações e com inteligência artificial abordando estratégias inovadoras</p>
+        </div>
+    </section>
+
+    <div class="tech-grid">
+        <div class="tech-card">
+            <h3>Marketing Preditivo</h3>
+            <p>Análise avançada de dados para prever tendências e comportamentos do consumidor.</p>
+        </div>
+        <div class="tech-card">
+            <h3>Automação Inteligente</h3>
+            <p>Otimização de campanhas em tempo real com aprendizado de máquina.</p>
+        </div>
+        <div class="tech-card">
+            <h3>Personalização AI</h3>
+            <p>Conteúdo e experiências personalizadas para cada cliente.</p>
+        </div>
+        <div class="tech-card">
+            <h3>Analytics Avançado</h3>
+            <p>Métricas precisas e insights acionáveis para seu negócio.</p>
+        </div>
+    </div>
+
+    <section class="services-section">
+        <h2 class="services-title">Nossos Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Gestão de Redes Sociais</h3>
+                <p>Estratégias personalizadas com IA para aumentar seu engajamento.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO Inteligente</h3>
+                <p>Otimização avançada para melhor posicionamento nos buscadores.</p>
+            </div>
+            <div class="service-card">
+                <h3>Copywriting com IA</h3>
+                <p>Textos persuasivos gerados com auxílio de inteligência artificial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Entre em Contato</h2>
+        <div class="contact-form">
+            <p>Transforme sua presença digital conosco</p>
+            <!-- Adicione seu formulário de contato aqui -->
+        </div>
+    </section>
+
+    <script>
+        // Particle animation
+        class Particle {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.speed = 0.5 + Math.random();
+                this.radius = Math.random() * 3;
+                this.direction = Math.random() * Math.PI * 2;
+            }
+
+            update() {
+                this.x += Math.cos(this.direction) * this.speed;
+                this.y += Math.sin(this.direction) * this.speed;
+
+                if (this.x < 0) this.x = this.canvas.width;
+                if (this.x > this.canvas.width) this.x = 0;
+                if (this.y < 0) this.y = this.canvas.height;
+                if (this.y > this.canvas.height) this.y = 0;
+            }
+        }
+
+        // Setup canvas
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        document.getElementById('particles').appendChild(canvas);
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Create particles
+        const particles = Array.from({ length: 100 }, () => new Particle(canvas));
+
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+
+            particles.forEach(particle => {
+                particle.update();
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Scroll animation for cards
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        
+        document.querySelectorAll('.tech-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Atualizar efeito de escurecimento no scroll
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            const scrolled = window.scrollY;
+            const darkValue = Math.min(0.85, scrolled / (window.innerHeight * 0.7));
+            
+            // Efeito de fade para o hero
+            hero.style.background = `linear-gradient(135deg, 
+                rgba(45, 27, 74, ${1 - darkValue}), 
+                rgba(106, 27, 154, ${1 - darkValue}))`;
+            
+            // Efeito de fade para o conteúdo
+            heroContent.style.opacity = Math.max(0, 1 - (scrolled / (window.innerHeight * 0.4)));
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            
+            document.body.style.background = `rgb(${18 - (darkValue * 8)}, 
+                ${18 - (darkValue * 8)}, 
+                ${18 - (darkValue * 8)})`;
+        });
+
+        // Atualizar partículas para cor mais suave
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(224, 64, 251, 0.3)'; // Cor das partículas atualizada
+
+            particles.forEach(particle => {
+                particle.update();
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animate);
+        }
+    </script>
+</body>
+</html>
